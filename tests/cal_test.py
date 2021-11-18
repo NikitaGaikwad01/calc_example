@@ -1,58 +1,42 @@
 """Testing the Calculator"""
-import pprint
+from calc.main import Calculator
 
-import pytest
+def test_calculator_result():
+    """testing calculator result is 0"""
+    calc = Calculator()
+    assert calc.result == 1
 
-from calculator.calculator import Calculator
-
-#this is how you define a function that will run each time you pass it to a test, it is called a fixture
-@pytest.fixture
-def clear_history():
-    Calculator.clear_history()
-
-def test_calculator_add(clear_history):
+def test_calculator_add():
     """Testing the Add function of the calculator"""
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.add_number(4, 2) == 6
-    assert Calculator.history_count() == 4
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 6
-    pprint.pprint(Calculator.history)
+    #Arrange by instantiating the calc class
+    calc = Calculator()
+    #Act by calling the method to be tested
+    calc.add_number(4)
+    #Assert that the results are correct
+    assert calc.result == 5
 
-def test_clear_history(clear_history):
-    assert Calculator.add_number(1,2) == 3
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.add_number(4, 2) == 6
-    assert Calculator.history_count() == 4
-    assert Calculator.clear_history() == True
-    assert Calculator.history_count() == 0
+def test_calculator_get_result():
+    """Testing the Get result method of calculator"""
+    calc = Calculator()
+    assert calc.get_result() == 1
 
-def test_count_history(clear_history):
-    assert Calculator.history_count() == 0
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.history_count() == 2
-
-def test_get_last_calculation_result(clear_history):
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 5
-
-def test_get_first_calculation_result(clear_history):
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.get_result_of_first_calculation_added_to_history() == 4
-
-def test_calculator_subtract(clear_history):
+def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
-    assert Calculator.subtract_number(1, 2) == -1
+    calc = Calculator()
+    calc.subtract_number(1)
+    assert calc.get_result() == 0
 
-def test_calculator_multiply(clear_history):
+def test_calculator_multiply():
     """ tests multiplication of two numbers"""
-    assert Calculator.multiply_numbers(1,2) == 2
+    calc = Calculator()
+    result  = calc.multiply_numbers(1,2)
+    assert result == 2
 
-def test_calculator_division(clear_history):
+def test_calculator_divide():
     """ tests division of two numbers"""
-    assert Calculator.division_numbers(1,2) == 0.5
+    try:
+        calc = Calculator()
+        result  = calc.divide_numbers(1,1)
+        assert result == 1.0
+    except ZeroDivisionError:
+        raise Exception from ZeroDivisionError

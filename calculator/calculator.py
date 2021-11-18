@@ -1,57 +1,64 @@
-""" This is the increment function"""
-#first import the addition namespace
+""" import all the methods from calc_methods"""
 from calc.addition import Addition
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
 from calc.division import Division
+
+
 class Calculator:
-    """ This is the Calculator class"""
-    #this is the calculator static property
+    """ Creating a Calculator Module for initial processing stage """
+    # result set to 0 for initialization
     history = []
-    @staticmethod
-    def get_result_of_first_calculation_added_to_history():
-        return Calculator.history[0].getResult()
+
     @staticmethod
     def clear_history():
+        """ Creating History method for clearing the calc history"""
         Calculator.history.clear()
-        return True
-    @staticmethod
-    def history_count():
-        return len(Calculator.history)
+
     @staticmethod
     def add_calculation_to_history(calculation):
+        """ Appends calculation to history array """
         Calculator.history.append(calculation)
-        return True
+
     @staticmethod
-    def get_result_of_last_calculation_added_to_history():
-        # -1 gets the last item added to the list automaticly and you can expect it to have the get result method
-        return Calculator.history[-1].getResult()
+    def get_first_calculation_history():
+        """ Gets first calculation from history array """
+        return Calculator.history[0]
+
     @staticmethod
-    def add_number(value_a, value_b):
-        """ adds number to result"""
-        #create an addition object using the factory we created on the calculation class
-        addition = Addition.create(value_a,value_b)
-        # addition = Addition(value_a,value_b) <-this is not good but will work.  It will be repeated too much
+    def get_last_calculation_added():
+        """ Gets last calculation from history array """
+        return Calculator.history[-1]
+
+    @staticmethod
+    def get_calculation_count():
+        """ Gets number of calculations from history array """
+        return len(Calculator.history)
+
+    @staticmethod
+    def addition_nums(value_a, value_b):
+        """ Creating a method calling the Addition logic  """
+        addition = Addition.create(value_a, value_b).getresult()
         Calculator.add_calculation_to_history(addition)
-        return Calculator.get_result_of_last_calculation_added_to_history()
+        return Calculator.get_last_calculation_added()
+
     @staticmethod
-    #this is an example of a calling method
-    def subtract_number(value_a, value_b):
-        """ subtract number from result"""
-        # create an subtraction object using the factory we created on the calculation class
-        subtraction = Subtraction.create(value_a, value_b)
-        # addition = Addition(value_a,value_b) <-this is not good but will work.  It will be repeated too much
+    def subtraction_nums(value_a, value_b):
+        """ Creating a method calling the subtraction logic """
+        subtraction = Subtraction.create(value_a, value_b).getresult()
         Calculator.add_calculation_to_history(subtraction)
-        return Calculator.get_result_of_last_calculation_added_to_history()
+        return Calculator.get_last_calculation_added()
+
     @staticmethod
-    def multiply_numbers(value_a, value_b):
-        """ multiply two numbers and store the result"""
-        #this is a shorthand way to create the multiplication object and added it the history in one line
-        Calculator.add_calculation_to_history(Multiplication.create(value_a,value_b))
-        return Calculator.get_result_of_last_calculation_added_to_history()
+    def multiplication_nums(value_a, value_b):
+        """Creating a method calling the multiplication logic """
+        multiplication = Multiplication.create(value_a, value_b).getresult()
+        Calculator.add_calculation_to_history(multiplication)
+        return Calculator.get_last_calculation_added()
+
     @staticmethod
-    def division_numbers(value_a, value_b):
-        """ divide two numbers and store the result"""
-        #this is a shorthand way to create the multiplication object and added it the history in one line
-        Calculator.add_calculation_to_history(Division.create(value_a,value_b))
-        return Calculator.get_result_of_last_calculation_added_to_history()
+    def division_nums(value_a, value_b):
+        """ Creating a method calling the division logic """
+        division = Division.create(value_a, value_b).getresult()
+        Calculator.add_calculation_to_history(division)
+        return Calculator.get_last_calculation_added()
