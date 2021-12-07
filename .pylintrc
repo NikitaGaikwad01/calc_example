@@ -1,6 +1,10 @@
 [MASTER]
+init-hook='sys.path = list(); sys.path.append("/path/to/foo")'
+
 disable=
-    C0114, # missing-module-docstring
+    C0114 (missing-module-docstring)
+    C0115 (missing-class-docstring)
+    C0116 (missing-function-docstring)
     C0115 (missing-class-docstring)
     C0116 (missing-function-docstring)
 
