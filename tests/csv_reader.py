@@ -1,3 +1,4 @@
+
 import os
 import pandas as pd
 import shutil
@@ -28,7 +29,7 @@ class FileReader:
     @staticmethod
     def search_csv(name_of_csv):
         """Searches for a particular csv in an input folder and returns location"""
-        absolute_location = "tests/csv_input_file/" + name_of_csv
+        absolute_location = "calc/tests/csv_input_file/" + name_of_csv
         return absolute_location
 
     """Will turn a pandas dataframe into a csv log file"""
@@ -41,17 +42,19 @@ class FileReader:
     @staticmethod
     def set_directory():
         """Changes the directory to 'results' in order to commit the logs"""
-        os.chdir('tests/results')
+        os.chdir('calc/tests/result_csv_file')
         return True
 
     """Contains methods to move files around"""
     # pylint: disable='too-few-public-methods
     @staticmethod
     def move_to_destination(current_csv_file,
-                            destination='tests/output_csv'):
+                            destination='calc/tests/result_csv_file'):
         """Moves csv files from one folder to another"""
         shutil.move(current_csv_file, destination)
 
+if __name__ == '__main__':
+    FileReader.main()
 # with open('csv_input/addition.csv', 'r') as csv_file:
 #         csv_reader = csv.reader(csv_file)
 #

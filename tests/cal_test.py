@@ -1,42 +1,55 @@
 """Testing the Calculator"""
-from calc.main import Calculator
+import unittest
+from tests import csv_reader
+from csv_reader import FileReader
+import pytest
+import csv_input_file
 
-def test_calculator_result():
-    """testing calculator result is 0"""
-    calc = Calculator()
-    assert calc.result == 1
+from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+@pytest.fixture
+def clear_history_fixture():
+    """define a function that will run each time you pass it to a test, it is called a fixture"""
+    # pylint: disable=redefined-outer-name
+    Calculations.clear_history()
+#You have to add the fixture function as a parameter to the test that you want to use it with
+def test_calculator_add_static():
+    """testing that our calculator has a static method for addition"""
 
-def test_calculator_add():
-    """Testing the Add function of the calculator"""
-    #Arrange by instantiating the calc class
-    calc = Calculator()
-    #Act by calling the method to be tested
-    calc.add_number(4)
-    #Assert that the results are correct
-    assert calc.result == 5
+    """Arrange"""
+    data = FileReader.read_from_file("addition.csv")
+    value_a = data._get_value(0, 1, takeable=True)
+    value_b = data._get_value(0, 2, takeable=True)
+    addition_result =data._get_value(0, 0, takeable=True)
 
-def test_calculator_get_result():
-    """Testing the Get result method of calculator"""
-    calc = Calculator()
-    assert calc.get_result() == 1
+    """Act"""
+    result = Calculator.add_numbers(value_a,value_b)
 
-def test_calculator_subtract():
-    """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    calc.subtract_number(1)
-    assert calc.get_result() == 0
+    """Assert"""
+    assert result == addition_result
 
-def test_calculator_multiply():
-    """ tests multiplication of two numbers"""
-    calc = Calculator()
-    result  = calc.multiply_numbers(1,2)
-    assert result == 2
+def test_calculator_subtract_static(clear_history_fixture):
+    """Testing the subtract method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.subtract_numbers(1.0,2.0) == -3.0
 
-def test_calculator_divide():
-    """ tests division of two numbers"""
-    try:
-        calc = Calculator()
-        result  = calc.divide_numbers(1,1)
-        assert result == 1.0
-    except ZeroDivisionError:
-        raise Exception from ZeroDivisionError
+def test_calculator_multiply_static(clear_history_fixture):
+    """Testing the subtract method of the calc"""
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.multiply_numbers(1.0,2.0) == 2.0
+
+def test_calculator_divide_static(clear_history_fixture):
+    """Testing the divide method of the calculator"""
+	#pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.divide_numbers(10.0,2.0)== 5.0
+
+class MyTestCase(unittest.TestCase):
+    """A test case is the individual unit of testing.unittest provides a base class"""
+    def test_calculator_divide_by_zero(self):
+        """Testing the divide method of the calculator when dividing by zero"""
+        with self.assertRaises(ZeroDivisionError):
+            Calculator.divide_numbers(4.0,0)
+if __name__ == '__main__':
+    unittest.main()
+if __name__ == '__main__':
+    FileReader.main()
