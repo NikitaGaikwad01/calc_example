@@ -1,12 +1,23 @@
 """Division Class"""
+import pprint
 
 from calc.calculations.calculation import Calculation
 
 class Division(Calculation):
-    """creating the object for the division method"""
+    """division calculation object"""
     def get_result(self):
         """get the division results"""
-        division_of_values = 1.0
+        initial = 1.0
+        result = 0
         for value in self.values:
-            division_of_values =   division_of_values / value
-        return division_of_values
+            pprint.pprint(value)
+            pprint.pprint(result)
+            if result == 0:
+                result = value / initial
+            else:
+                try:
+                    result = result / value
+                except ZeroDivisionError:
+                    return 0.0
+            pprint.pprint(result)
+        return result

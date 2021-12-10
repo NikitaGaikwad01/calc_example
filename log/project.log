@@ -1,0 +1,50 @@
+2021-12-07 17:26:13,665:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-07 17:26:13,666:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-07 17:26:13,667:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-07 17:26:13,668:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-07 17:27:39,477:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-07 17:27:39,478:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-07 17:27:39,479:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-07 17:27:39,480:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-07 17:29:47,704:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-07 17:29:47,706:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-07 17:29:47,706:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-07 17:29:47,707:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-07 17:29:47,708:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-07 17:31:19,639:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-07 17:31:19,641:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-07 17:31:19,642:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-07 17:31:19,643:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-07 17:31:19,644:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-09 23:54:45,998:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-09 23:54:46,023:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-09 23:54:46,025:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-09 23:54:46,026:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-09 23:54:46,027:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-09 23:58:11,872:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-09 23:58:11,886:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-09 23:58:11,887:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-09 23:58:11,889:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-09 23:58:11,891:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-10 00:01:06,230:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-10 00:01:06,232:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-10 00:01:06,232:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-10 00:01:06,233:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-10 00:01:06,234:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-10 00:05:37,098:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-10 00:05:37,099:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-10 00:05:37,099:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-10 00:05:37,100:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-10 00:05:37,101:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
+2021-12-10 00:07:02,584:projectcalculator.maincalculator:Division : 20.000000 / 10.000000 = 2.000000
+2021-12-10 00:07:02,585:projectcalculator.maincalculator:Division : 40.000000 / 20.000000 = 2.000000
+2021-12-10 00:07:02,586:projectcalculator.maincalculator:Division : 100.000000 / 50.000000 = 2.000000
+2021-12-10 00:07:02,587:projectcalculator.maincalculator:Division : 200.000000 / 50.000000 = 4.000000
+2021-12-10 00:07:02,588:projectcalculator.maincalculator:float division by zero
+ZeroDivisionError: float division by zero
