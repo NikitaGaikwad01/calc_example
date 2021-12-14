@@ -1,51 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <title>Hello, world!</title>
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/basicform">Basic HTML Form</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">WTF Form for flask (To Be Added)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
-    <div id="content">{% block content %}{% endblock %}</div>
+</head>
+<body>
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-0">
+        <a class="navbar-brand" href="index.html"><img src="{{ url_for('static', filename='images/p.png') }}" width="100" alt="logo"></a>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Python Articles
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <a class="dropdown-item" href="pylint.html">Python and Pylint</a>
+                        <a class="dropdown-item" href="oop.html">OOP</a>
+                        <a class="dropdown-item active" href="aaa.html">AAA Testing</a>
+                        <a class="dropdown-item" href="cal.html">SOLID Object Oriented Design</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calculator">Calculator</a>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="content">{% block content %}{% endblock %}</div>
 
-      <div id="footer">
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+    <footer class="bg-dark text-center text-white fixed-bottom">
         {% block footer %}
-        &copy; Copyright 2021 by <a href="#">Keith Williams</a>.
+        <div class="footer">
+  <p style="color: wheat;display: block; margin: auto;">© 2021 Copyright: Nikita Ramesh Gaikwad</p>
+  <h4 style="color: wheat;display: block; margin: auto;">Connecting the World Digitally !</h4>
+  <img src="{{ url_for('static', filename='images/GitHub-icon.png') }}" alt="github"><a href="https://github.com/NikitaGaikwad01/calculator_example/tree/webapp" style="color: navajowhite"> GitHub</a>
+  <img src="{{ url_for('static', filename='images/w3c.png') }}" alt="w3c" width="70"><a href="https://validator.w3.org/nu/?useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=http%3A%2F%2Fproject2nikita.eastus.azurecontainer.io%2Fpylint.html" style="color: navajowhite">W3C Validator</a>
+  <img src="{{ url_for('static', filename='images/p18.png') }}" alt="linkedin" width="65"><a href="https://www.linkedin.com/in/nikitarameshgaikwad" style="color: navajowhite">LinkedIn</a>
+
+</div>
+
         {% endblock %}
-    </div>
-  </body>
+    </footer>
+
+</div>
+</body>
 </html>

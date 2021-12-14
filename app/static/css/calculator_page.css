@@ -1,0 +1,46 @@
+body {
+  background: linear-gradient(-45deg, red, blue, #ece80e, #ef672e);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.title{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.img-responsive {
+  height: auto;
+  width: auto;
+  max-height: 72px;
+  max-width: 250px;
+}
+
+img{
+  width: 100%;
+}
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

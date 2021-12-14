@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: red;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <h1>Calculator</h1>
+
+    <form action="/calculator" method="POST">
+        <label for="value1">Input1:</label><br>
+        <input type="text" id="value1" name="value1" value="1"><br>
+        <label for="value2">Input2:</label><br>
+        <input type="text" id="value2" name="value2" value="2"><br>
+        <fieldset>
+        <legend>Operations</legend>
+          <div class="form-check">
+                                <input type="radio" name="operation" id="addition" value="addition" checked>
+                                    <label for="addition">Addition</label>
+
+                                <input type="radio" name="operation" id="subtraction" value="subtraction">
+                                    <label for="subtraction">Subtraction</label>
+                                 <input type="radio" name="operation" id="multiplication" value="multiplication">
+                                       <label for="multiplication">Multiply</label>
+
+                                <input type="radio" name="operation" id="division" value="division">
+                                        <label for="division">Divide</label>
+                            </div>
+
+                        </div>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

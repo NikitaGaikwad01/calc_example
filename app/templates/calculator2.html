@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+{% if error %}
+<div class="alert alert-danger error alert-dismissible fade show" role="alert">
+    <!--<span>{{ message }}</span>-->
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ message }}
+    {{ error }}
+</div>
+{% endif %}
+<div class="p-5 my-4 bg-light text-white rounded-3 info shadow-lg p-3  rounded">
+    <div class="container-fluid py-2 mx-4">
+            <div class="d-flex justify-content-center">
+                <span class="border border-info rounded p-3 p-5 my-4 bg-white text-dark shadow-lg ">
+                <form action="/calculator" method="POST">
+                    <h4 class="text-center"><u>Calculator</u></h4><br>
+                    <div class="row mb-3">
+                        <label for="value1" class="col-sm-3 col-form-label">Input1</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="value1" name="value1"
+                                   placeholder="Enter number">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="value2" class="col-sm-3 col-form-label">Input2</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="value2" name="value2"
+                                   placeholder="Enter number">
+                        </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-8 pt-0">Operations :</legend>
+                        <div class="col-sm-6">
+                            <div class="form-check">
+                                <input type="radio" name="operation" id="addition" value="addition" checked>
+                                    <label for="addition">Addition</label>
+
+                                <input type="radio" name="operation" id="subtraction" value="subtraction">
+                                    <label for="subtraction">Subtraction</label>
+                                 <input type="radio" name="operation" id="multiplication" value="multiplication">
+                                       <label for="multiplication">Multiply</label>
+
+                                <input type="radio" name="operation" id="division" value="division">
+                                        <label for="division">Divide</label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+                    </span>
+            </div>
+
+            <!--            comment-->
+            <!--            comment-->
+    </div>
+</div>
+{% endblock %}

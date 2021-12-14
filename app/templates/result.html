@@ -3,14 +3,38 @@
 {% block head %}
     {{ super() }}
     <style type="text/css">
-        .important { color: #336699; }
+        .important { color: #338099; }
     </style>
 {% endblock %}
 {% block content %}
-    <h1>result</h1>
-    <strong>Value 1: </strong> {{ value1 }} <br>
-    <strong>Value 2: </strong> {{ value2 }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ result }}
+    <h1>Result</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Input1</th>
+      <th scope="col">Input2</th>
+      <th scope="col">Operation</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ input1 }} </td>
+      <td>{{ input2 }} </td>
+      <td>{{ operation }}</td>
+      <td>{{ result }}</td>
+    </tr>
+  </tbody>
+</table>
 
 {% endblock %}
