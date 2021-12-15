@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
     <!-- Bootstrap CSS -->
@@ -58,6 +60,14 @@
 
         {% endblock %}
     </footer>
+
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#data').DataTable();
+    });
+</script>
+
 
 </div>
 </body>

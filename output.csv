@@ -1,0 +1,7 @@
+Value1,Value2,Operation,Result
+10,23,addition,33.0
+12,2,multiplication,24.0
+15,2,multiplication,30.0
+10,2,multiplication,20.0
+40,2,multiplication,80.0
+20,10,multiplication,200.0

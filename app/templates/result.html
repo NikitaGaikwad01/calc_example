@@ -1,31 +1,32 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
-{% block head %}
-{{ super() }}
-<style type="text/css">
-    .important {
-        color: #336699;
-    }
-</style>
-{% endblock %}
-{% block content %}
+{% block title %}Result{% endblock %}
 
+
+{% block content %}
 <div class="container">
-    <h4 class="text-center"> Result </h4>
-        <table class="table table-hover table-bordered table-dark table-striped">
+    <h1>History Results</h1>
+    <table id="data" class="table dataTable table-dark">
+        <thead>
         <tr>
-            <th>Value 1</th>
-            <th>Value 2</th>
+            <th>Value1</th>
+            <th>Value2</th>
             <th>Operation</th>
             <th>Result</th>
         </tr>
-        <tr>
-            <td>{{ value1 }}</td>
-            <td>{{ value2 }}</td>
-            <td>{{ operation }}</td>
-            <td colspan="2">{{ result }}</td>
-        </tr>
-    </table>
+        </thead>
+        <tbody>
 
+        {% set list1 = hist.split('\n') %}
+        {% for item in list1 %}
+        {% set subitem = item.split(',') %}
+        <tr>
+            <td>{{ subitem[0] }}</td>
+            <td>{{ subitem[1] }}</td>
+            <td>{{ subitem[2] }}</td>
+            <td>{{ subitem[3] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
