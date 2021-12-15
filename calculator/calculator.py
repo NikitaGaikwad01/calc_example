@@ -11,8 +11,8 @@ class Calculator:
     @staticmethod
     def add_operation(tuple_values: tuple):
         """Performing addition operation"""
-        #History.add_calculation_history(Addition.create(tuple_values).getoutput())
-        History.add_calculation_history(tuple_values)
+        History.add_calculation_history(Addition.create(tuple_values).getoutput())
+        #History.add_calculation_history(tuple_values)
         return True
 
     @staticmethod
