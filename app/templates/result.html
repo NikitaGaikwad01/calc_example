@@ -1,40 +1,31 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #338099; }
-    </style>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
 {% endblock %}
 {% block content %}
-    <h1>Result</h1>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
 
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Input1</th>
-      <th scope="col">Input2</th>
-      <th scope="col">Operation</th>
-      <th scope="col">Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{ input1 }} </td>
-      <td>{{ input2 }} </td>
-      <td>{{ operation }}</td>
-      <td>{{ result }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+    <h4 class="text-center"> Result </h4>
+        <table class="table table-hover table-bordered table-dark table-striped">
+        <tr>
+            <th>Value 1</th>
+            <th>Value 2</th>
+            <th>Operation</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>{{ value1 }}</td>
+            <td>{{ value2 }}</td>
+            <td>{{ operation }}</td>
+            <td colspan="2">{{ result }}</td>
+        </tr>
+    </table>
 
+</div>
 {% endblock %}

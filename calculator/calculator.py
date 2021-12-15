@@ -1,64 +1,39 @@
 """ import all the methods from calc_methods"""
-from calc.addition import Addition
-from calc.subtraction import Subtraction
-from calc.multiplication import Multiplication
-from calc.division import Division
-
+from calc.calculations.addition import Addition
+from calc.calculations.subtraction import Subtraction
+from calc.calculations.multiplication import Multiplication
+from calc.calculations.division import Division
+from calc.calculations.history_project import History
 
 class Calculator:
     """ Creating a Calculator Module for initial processing stage """
-    # result set to 0 for initialization
-    history = []
 
     @staticmethod
-    def clear_history():
-        """ Creating History method for clearing the calc history"""
-        Calculator.history.clear()
+    def add_operation(tuple_values: tuple):
+        """Performing addition operation"""
+        #History.add_calculation_history(Addition.create(tuple_values).getoutput())
+        History.add_calculation_history(tuple_values)
+        return True
 
     @staticmethod
-    def add_calculation_to_history(calculation):
-        """ Appends calculation to history array """
-        Calculator.history.append(calculation)
+    def sub_operation(tuple_values: tuple):
+        """Performing subtraction operation"""
+        History.add_calculation_history(Subtraction.create(tuple_values).getoutput())
+        return True
 
     @staticmethod
-    def get_first_calculation_history():
-        """ Gets first calculation from history array """
-        return Calculator.history[0]
+    def multiply_operation(tuple_values: tuple):
+        """Performing multiplication operation"""
+        History.add_calculation_history(Multiplication.create(tuple_values).getoutput())
+        return True
 
     @staticmethod
-    def get_last_calculation_added():
-        """ Gets last calculation from history array """
-        return Calculator.history[-1]
+    def divide_operation(tuple_values: tuple):
+        """Performing division operation"""
+        History.add_calculation_history(Division.create(tuple_values).getoutput())
+        return True
 
     @staticmethod
-    def get_calculation_count():
-        """ Gets number of calculations from history array """
-        return len(Calculator.history)
-
-    @staticmethod
-    def addition_nums(value_a, value_b):
-        """ Creating a method calling the Addition logic  """
-        addition = Addition.create(value_a, value_b).getresult()
-        Calculator.add_calculation_to_history(addition)
-        return Calculator.get_last_calculation_added()
-
-    @staticmethod
-    def subtraction_nums(value_a, value_b):
-        """ Creating a method calling the subtraction logic """
-        subtraction = Subtraction.create(value_a, value_b).getresult()
-        Calculator.add_calculation_to_history(subtraction)
-        return Calculator.get_last_calculation_added()
-
-    @staticmethod
-    def multiplication_nums(value_a, value_b):
-        """Creating a method calling the multiplication logic """
-        multiplication = Multiplication.create(value_a, value_b).getresult()
-        Calculator.add_calculation_to_history(multiplication)
-        return Calculator.get_last_calculation_added()
-
-    @staticmethod
-    def division_nums(value_a, value_b):
-        """ Creating a method calling the division logic """
-        division = Division.create(value_a, value_b).getresult()
-        Calculator.add_calculation_to_history(division)
-        return Calculator.get_last_calculation_added()
+    def get_last_value():
+        """result of the calculation"""
+        return History.get_last_calculation()

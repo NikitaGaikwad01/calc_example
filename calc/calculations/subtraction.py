@@ -1,13 +1,13 @@
-"""Subtraction Class"""
+"""Subtraction Class for the project"""
 
 from calc.calculations.calculation import Calculation
 
 class Subtraction(Calculation):
-    """subtraction calculation object"""
-    def get_result(self):
-        """get the subtraction results"""
-        difference_of_values = 0.0
-        for value in self.values:
-            difference_of_values =   difference_of_values - value
-        return difference_of_values
-    
+    """Defining the calculator class for subtracting two numbers"""
+
+    def getoutput(self):
+        """ Using self to reference the data contained in the object instance """
+        subtraction_of_values = self.values[0]
+        for value in self.values[1:]:
+            subtraction_of_values = subtraction_of_values - value
+        return round(subtraction_of_values, 3)

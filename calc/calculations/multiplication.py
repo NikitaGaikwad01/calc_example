@@ -1,11 +1,13 @@
-"""Multiplication Class"""
+"""Multiplication Class for the project"""
+
 from calc.calculations.calculation import Calculation
 
 class Multiplication(Calculation):
-    """subtraction calculation object"""
-    def get_result(self):
-        """get the multiplication results"""
-        result = 1.0
+    """Defining the calculator class for multiplying two numbers"""
+
+    def getoutput(self):
+        """ Using self to reference the data contained in the object instance """
+        multiplication_of_values = 1.0
         for value in self.values:
-            result = result * value
-        return result
+            multiplication_of_values = multiplication_of_values * value
+        return round(multiplication_of_values, 3)

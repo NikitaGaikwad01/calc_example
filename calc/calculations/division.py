@@ -1,12 +1,13 @@
-"""Division Class"""
+"""Division Class for the project"""
 
 from calc.calculations.calculation import Calculation
 
 class Division(Calculation):
-    """creating the object for the division method"""
-    def get_result(self):
-        """get the division results"""
-        division_of_values = 1.0
-        for value in self.values:
-            division_of_values =   division_of_values / value
-        return division_of_values
+    """Defining the calculator class for dividing two numbers"""
+
+    def getoutput(self):
+        """ Using self to reference the data contained in the object instance """
+        division_of_values = self.values[0]
+        for value in self.values[1:]:
+            division_of_values = division_of_values / value
+        return round(division_of_values, 3)
