@@ -5,3 +5,15 @@ Value1,Value2,Operation,Result
 10,2,multiplication,20.0
 40,2,multiplication,80.0
 20,10,multiplication,200.0
+10,20,add_operation,30.0
+10,20,add_operation,30.0
+10,20,add_operation,30.0
+50,60,multiply_operation,3000.0
+50,60,sub_operation,-10.0
+50,60,sub_operation,-10.0
+10,20,add_operation,30.0
+1,2,multiply_operation,2.0
+75,60,multiply_operation,4500.0
+10,5,divide_operation,2.0
+65,84,sub_operation,-19.0
+1000,64,multiply_operation,64000.0

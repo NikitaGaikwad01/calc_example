@@ -21,7 +21,7 @@
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-0">
-        <a class="navbar-brand" href="index.html"><img src="{{ url_for('static', filename='images/p.png') }}" width="100" alt="logo"></a>
+        <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='images/p.png') }}" width="100" alt="logo"></a>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -39,7 +39,9 @@
         </div>
     </nav>
 </div>
-<div id="content">{% block content %}{% endblock %}</div>
+<div id="content">
+
+    {% block content %} {% endblock %}</div>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -52,8 +54,8 @@
         <div class="footer">
   <p style="color: wheat;display: block; margin: auto;">© 2021 Copyright: Nikita Ramesh Gaikwad</p>
   <h4 style="color: wheat;display: block; margin: auto;">Connecting the World Digitally !</h4>
-  <img src="{{ url_for('static', filename='images/GitHub-icon.png') }}" alt="github"><a href="https://github.com/NikitaGaikwad01/calculator_example/tree/webapp" style="color: navajowhite"> GitHub</a>
-  <img src="{{ url_for('static', filename='images/w3c.png') }}" alt="w3c" width="70"><a href="https://validator.w3.org/nu/?useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=http%3A%2F%2Fproject2nikita.eastus.azurecontainer.io%2Fpylint.html" style="color: navajowhite">W3C Validator</a>
+  <img src="{{ url_for('static', filename='images/GitHub-icon.png') }}" alt="github"><a href="https://github.com/NikitaGaikwad01/calculator_example/tree/project3" style="color: navajowhite"> GitHub</a>
+  <!--- <img src="{{ url_for('static', filename='images/w3c.png') }}" alt="w3c" width="70"><a href="https://validator.w3.org/nu/?useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=http%3A%2F%2Fproject2nikita.eastus.azurecontainer.io%2Fpylint.html" style="color: navajowhite">W3C Validator</a> --->
   <img src="{{ url_for('static', filename='images/p18.png') }}" alt="linkedin" width="65"><a href="https://www.linkedin.com/in/nikitarameshgaikwad" style="color: navajowhite">LinkedIn</a>
 
 </div>

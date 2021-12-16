@@ -1,7 +1,7 @@
 from app.controllers.controller import ControllerBase
 from calculator.calculator import Calculator
 from flask import render_template, request, flash, redirect, url_for
-
+import pandas as pd
 
 class CalculatorController(ControllerBase):
     @staticmethod
@@ -27,14 +27,12 @@ class CalculatorController(ControllerBase):
             getattr(Calculator, operation)(my_tuple)
             result = str(Calculator.get_last_value())
 
-            # write to file
-            str1 = value1 + "," + value2 + "," + operation + "," + result + '\n'
-            with open('output.txt', 'a+') as f:
-                f.write(str1)
+            # write to csv
+            calculations = {'value1': [value1], 'value2': [value2], 'operation': [operation], 'result': [result]}
+            df = pd.DataFrame(calculations, columns=['value1', 'value2', 'operation', 'result'])
+            df.to_csv('output.csv', mode='a', index=False, header=False, sep=',')
 
-            with open('output.txt', 'r') as fr:
-                hist = fr.read().strip()
-
+            hist = pd.read_csv('output.csv', skiprows=1).values.tolist()
             return render_template('result.html', val1=value1, val2=value2, ope=operation, res=result, hist=hist)
         return render_template('calculator.html')
 

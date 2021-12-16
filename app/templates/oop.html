@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+
+    .row:after {
+      display: table;
+      clear: both;
+      border: #005CBF;
+    }
+        .flip-card {
+            background-color: transparent;
+            width: 1000px;
+            height: 250px;
+            margin: 50px auto;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: royalblue;
+            color: floralwhite;
+        }
+
+        .flip-card-back {
+            background-color: royalblue;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+    .float-cont > * {
+      float:left;
+      margin-right:5px;
+    }
+    .float-cont1 > * {
+      float:right;
+      margin-right:5px;
+    }
+    .cont {
+      *zoom:1 /* for IE */
+    }
+    .cont:before,
+    .cont:after {
+      content: " ";
+      display: table;
+    }
+    .cont:after {
+      clear: both;
+    }
+    a:hover
+    {
+      background-color: #E74C3C;
+      border-color:black;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    </style>
+<body>
+{% endblock %}
+{% block content %}
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="{{ url_for('static', filename='images/p4.PNG') }}" alt="Avatar" style="width:1000px;height:250px;">
+        </div>
+        <div class="flip-card-back">
+            <p style="font-size: 20px;font-weight: bold;color: whitesmoke;">Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes the idea of wrapping data and the methods that work on data within one unit. This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data. To prevent accidental change, an object’s variable can only be changed by an object’s method. Those types of variables are known as private variable.
+                A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.
+            </p>
+        </div>
+    </div>
+</div>
+
+  <br>
+<p style="font-size:40px;color:white;font-style: italic;font-weight: bold;">How to structure a unit test: the Arrange-Act-Assert pattern
+</p>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="{{ url_for('static', filename='images/p5.PNG') }}" alt="Avatar" style="width:1000px;height:250px;">
+        </div>
+        <div class="flip-card-back">
+            <p style="font-size: 20px;font-weight: bold;color: whitesmoke;">Inheritance is the capability of one class to derive or inherit the properties from another class. The benefits of inheritance are:
+            </p>
+            <p style="font-size: 20px;font-weight: bold;color: whitesmoke;">
+               1. It represents real-world relationships well.
+            </p>
+            <p style="font-size: 20px;font-weight: bold;color: whitesmoke;">
+                2. It provides reusability of a code. We don’t have to write the same code again and again. Also, it allows us to add more features to a class without modifying it.
+            </p>
+            <p style="font-size: 20px;font-weight: bold;color: whitesmoke;">
+                3. It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses of B would automatically inherit from class A.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</div>
+
+  </div>
+</body>

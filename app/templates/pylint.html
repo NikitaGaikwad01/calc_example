@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+
+    .row:after {
+      display: table;
+      clear: both;
+      border: #005CBF;
+    }
+
+    .float-cont > * {
+      float:left;
+      margin-right:5px;
+    }
+    .float-cont1 > * {
+      float:right;
+      margin-right:5px;
+    }
+    .cont {
+      *zoom:1 /* for IE */
+    }
+    .cont:before,
+    .cont:after {
+      content: " ";
+      display: table;
+    }
+    .cont:after {
+      clear: both;
+    }
+    a:hover
+    {
+      background-color: #E74C3C;
+      border-color:black;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    </style>
+<body>
+{% endblock %}
+{% block content %}
+
+    <h4>Pylint</h4>
+    <div class="cont float-cont" style="color:black">
+      <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="pylint" width=20 class="image" style="width: 20%">
+      Pylint is a source-code, bug and quality checker for the Python programming language.
+      It is named following a common convention in Python of a "py" prefix, and a nod to the C programming lint program.
+      It follows the style recommended by PEP 8, the Python style guide. It is similar to Pychecker and Pyflakes,
+      but includes the following features:
+      Checking the length of each line
+      Checking that variable names are well-formed according to the project's coding standard
+      Checking that declared interfaces are truly implemented.
+    </div>
+
+  <br>
+    <h4>Object Oriented Programming</h4>
+    <div class="cont float-cont" style="color:black">
+      <img src="{{ url_for('static', filename='images/p3.png') }}" alt="pylint" width=35 class="image" style="width: 35%">
+      A Class is like an object constructor, or a "blueprint" for creating objects. Classes are created by keyword class.
+      Attributes are the variables that belong to a class.
+      Attributes are always public and can be accessed using the dot (.) operator. Eg.: Myclass.Myattribute
+      <br>
+    </div>
+{% endblock %}
+</div>
+
+  </div>
+</body>

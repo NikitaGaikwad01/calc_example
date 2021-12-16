@@ -16,9 +16,8 @@
         </thead>
         <tbody>
 
-        {% set list1 = hist.split('\n') %}
-        {% for item in list1 %}
-        {% set subitem = item.split(',') %}
+
+        {% for subitem in hist %}
         <tr>
             <td>{{ subitem[0] }}</td>
             <td>{{ subitem[1] }}</td>
